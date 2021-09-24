@@ -1,0 +1,94 @@
+			      EE 109  - Fall 2020
+			   Lab 8 - Digital Stopwatch
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+1. (2 points) Review the conceptual operation of a timer interrupt.
+
+  a. For a 16-bit timer with clock frequency of 16MHz (like the Arduino) and
+  prescalar of 64, how much time corresponds to a timer value of 2000?
+
+  Since desired clock cycles = clock frequency * desired delay time, we first calculate 
+  the desired cycle count. y / 64 = 2000 --> y = 128000. 16000000 * x = 128000 --> 
+  x = 0.008 seconds delay, or 8 ms delay. The answer is 0.008 seconds delay. 
+
+
+  b. With a clock frequency of 16MHz and prescalar of 8, what is the longest
+  amount of time we can track with an 8-bit hardware timer.
+
+  To find the longest amount of time we can track with an 8-bit hardware timer, 
+  we first divide the clock frequency (16MHz) by the prescalar, 16000000 / 8 --> 
+  2000000 to find the frequency correlating to the 8-bit timer. This value is important 
+  to us because we can use it to find the second delay of the timer since the inverse
+  of frequency is equal to the period of the timer. This value is T = 1/f --> 1/2000000
+  --> 5.0e(-7) second delay. Since we know the difference between an 8 bit timer and a 16 bit timer 
+  is that the maximum cycle count (modulus) the 8bit timer can count up to is 255 and 16bit is 65535, 
+  we need to multiply 5.0e(-7) with 255, which gives us 0.0001275 s (~128 microseconds). 
+
+
+2. (2 points) We want you to feel comfortable reading documentation to
+understand the operation of a device. To that end, open the ATmega328/P
+datasheet linked on our website from the Tools and Links Page. The Timer we
+have used also has the ability to make an output pin turn ON (set), OFF
+(clear), or Toggle when the timer reaches the OCR1A value (i.e. in addition to
+generating an interrupt, the hardware can automatically toggle or turn an
+output on or off). By searching the data sheet and using the information in
+section 20.14.1 (especially table 20-3) answer the following questions:
+
+  a. Which two pins can TIMER 1 (the 16-bit) timer control (i.e. what pins are
+  associated with OC1A and OC1B)?
+
+  According to the datasheet, if OC1A and OC1B are set to one, then it overrides 
+  the normal port functionality of the pins connected to the arduino. For example,
+  if OC1A is connected to PORT 1, then it would replace whatever functionality 
+  that was assigned to PORT 1. 
+
+
+
+  b. Describe what those pins would do when the timer reached the OCR1A value
+  if during initialization we used the statement TCCR1A |= 0x60; (Note: The PDF
+  register description of TCCR1A is a bit unclear: bit 7:6 corresponds to
+  COM1A1,COM1A0 and bit 5:4 corresponds to COM1B1,COM1B0).
+
+  TCCR1A |= 0x60 corresponds to bits 5 and 6 of the register. By setting them to
+  1, it affects the pins that are controlled by OC1A and OC1B. However, according 
+  to the datasheet, when OC1A and OC1B are connected to the I/O pins, it is dependent
+  on the WGM bits settings. Therefore, when the hardware reaches its maximum specified 
+  OCR1A value, WGM13 should be cleared to 0 and WGM12 should be set to 1. This tells
+  the counter that it has reached its maximum value and should startover at 0. That being
+  said, the pin that is connected to OC1A should be set to 1 and the pin OC1B is connected
+  to should be cleared to 0. 
+ 
+
+-------------------------------------------------------------------------------
+
+			   Operation of the Circuit
+
+Please record a video of you demonstrating the operation of the circuit that
+shows the following aspects of the stopwatch operating.
+
+1.  Show the splash screen at the start that shows your name.
+
+2.  Count should be initialized to 0.0 when the program starts.
+
+3.  Pressing the Start/Stop button starts the timing.  When it's running
+pressing Start/Stop button stops the timing.  Demonstrate the start/stop action
+twice.
+
+4.  Start it timing and let it run for at least 10 seconds to show that the
+timing rate is corret.
+
+5.  When running, pressing the Lab/Reset button freezes the display.  Leave it
+in this mode for a few seconds and then show that pressing a button will
+unfreeze he display and the display count will update to the correct value.
+
+6.  When the timing has been stopped, pressing the Lap/Reset button resets the
+time to 0.0 seconds.
+
+
+Paste link to lab demonstration video below:
+
+https://drive.google.com/file/d/1y9ArNPBZ60KHIrKSg-4sRwwCUmcZHlCF/view?usp=sharing
+
+

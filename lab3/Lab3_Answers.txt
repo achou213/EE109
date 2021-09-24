@@ -1,0 +1,67 @@
+			      EE 109  - Fall 2020
+		       Lab 3 - Arduino Input and Output
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+1. (2 points) Suppose we relocated the three buttons from group B, bits 5-3 to
+group D, bits 5-3, noting that the LED is still attached to group D, bit
+2. Assuming appropriate DDRD values, consider the following method of turning
+on the LED.
+
+    PORTD = 0x04; // turn on the LED
+
+Explain the problem with this approach and, in particular, what would stop
+working after the execution of that line of code.
+
+
+This method is written incorrectly, specifically, the correct notation should be
+PORTD |= (0x04) or PORTD |= (1 << 2);. Writing the code this way will not result in 
+the LED turning on. 
+
+
+
+
+
+2. (2 points) Suppose Tommy Trojan used an oscilloscope to measure the time
+from the instant a button was depressed to the instant the LED turned on.
+Tommy found that if he did the test several times the amount of delay was never
+the same but varied each time between 3 microseconds and 10
+microseconds. Explain why the delays varied. Think about the timing of how
+software executes.
+
+
+There is a delay between the moment the button is pressed and when the LED turns on
+is because due to the both the code. In my experiment, I experienced this as well, when 
+I pressed the button and the LED does not immediately turn on. The reasoning is that
+if we look at our code, we see that we programmed logical if-statements to detect which 
+of the three buttons is pressed. The if-statement will first be directed to the function 
+'checkInput',and then see which condition whithin the three if-statements is true, and will 
+then execute the following code corresponding to PB3 being pressed. This then allows a signal 
+to be sent to the port in which the LED is connected to, and send an output. The signal processes 
+and code execution explains why there is a delay. The delay varies because the processor within
+the arduino sometimes processes and executes the program faster, and sometimes slower.  
+
+
+
+-------------------------------------------------------------------------------
+
+			   Operation of the Circuit
+
+Please record a video of you demonstrating the operation of the circuit
+that shows the output LED under these conditions:
+
+1. Output after the 'U' button pressed.
+
+2. Output after the 'S' button pressed.
+
+3. Output after the 'C' button pressed.
+
+4. Hold down the 'S' button for 10 seconds to show that there is a DASH length
+delay between successive S characters as specified in the description on the
+web page of the timing of Morse code characters.
+
+Paste link to lab demonstration video below:
+
+https://drive.google.com/file/d/1GUk9eATFN9WdGdhUMOGFGpRMzSADzEyy/view?usp=sharing
+

@@ -1,0 +1,65 @@
+			      EE 109  - Fall 2020
+			 Lab 9 - Serial Communications
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+
+1. (1 points) Briefly explain why a common GND signal is needed between
+transmitter and receiver devices.
+
+When wiring circuit devices, it is important to have a common GND signal because the signal
+acts as a reference point for us to find the voltage across two points. Two devices require the same
+low voltage as reference points so that the signals from TX and be understood in RX. In other words, since 
+voltage is the potential difference between two points, this means that the voltmeter
+needs a reference so that the other device also uses that signal as a reference point. If this is changed,
+for example if the device receiving the data has no ground signal, then due to a conflict in reference point,
+it will not receive data correrctly. 
+
+
+
+2. (2 points) The baud rate (e.g. 9600 bps) is the rate at which 1's and 0's
+are transmitted over the serial line. Briefly explain why the data rate (rate
+at which useful	) is less than the baud rate even
+with error-free transmission.
+
+The baud rate is defined as the speed it transfers data in bits per second, in other words, it sends 1s and 0s 
+for transmission; the data rate on the other hand is the rate in which an entire packet of data is transmitted. 
+If that is the case, then the data rate should always be slower than the baud rate because the program cannot 
+have one bit representing the entire data you want to transmit. Instead, the program needs to wait until it has
+transmitte enough bits to be combined into one data. This explains why the data rate is slower, because it depends 
+on the baud rate sending individual bits.   
+
+-------------------------------------------------------------------------------
+
+			   Operation of the Circuit
+
+Please record a video of you demonstrating the operation of the circuit that
+shows the following aspects of the stopwatch operating.
+
+1.  Show the splash screen at the start that shows your name.
+
+2.  Up and Down buttons display list of at least 10 messages
+
+3.  Message list wraps around at top and bottom
+
+4.  Pressing the select button sends selected message
+
+5.  Incoming message correctly displayed on second line
+
+6.  You can transmit messages correctly to receiver on pin D11
+
+
+Paste link to lab demonstration video below:
+
+/*PLEASE READ: 
+Due to a hardware issue, my tri-state buffer is broken and I cannot incorporate it in my circuit.
+After speaking with professor Redekopp and professor Weber, they told me that the only solution to 
+replace the tri-state buffer is to use a wir3e and connect the TX and RX port so that data directly transfers
+to the two ports. I will demonstrate the lab a bit differently, however, my code should be the same as everyone
+else's. The only difference is that I am not using a tri-state buffer. If there are any issues, please speak with
+the professors. 
+*/
+
+https://drive.google.com/file/d/1iQqMLHee_Qdn6qAQXRsjcw-4xO0-DwvD/view?usp=sharing
+

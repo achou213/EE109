@@ -1,0 +1,54 @@
+			      EE 109  - Fall 2020
+		    Lab 7 - Rotary Encoders and Interrupts
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+
+1. (1 point) Briefly explain why it is undesirable to read the two encoder
+input signals with two separate PINC statements.
+
+Since the program reads the lines from top to bottom, if we read the PINC statements separately, 
+then we are getting the two samples at different times. Since we want to know the exact state we're 
+in, it is necessary to know which PINC value is 0 and which one is 1 so that the count value 
+increases accurately and our encoder rotates smoothly. 
+
+2. (1 point) Briefly explain why updating the LCD display in your ISR could
+lead to undesirable behavior for this lab.
+
+As stated in the lecture, an interrupt cannot disrupt another interrupt. When 
+in the ISR function, there cannot be any interrupts that prevent the code from
+accomplishing its task; if that is the case, then the program would lose information 
+and delay the code so that the program will not function properly. That being said,
+everytime we are in ISR notation, we shouldn't call codes or functions that can slow
+down the completion or cause delay to the code.  
+
+
+-------------------------------------------------------------------------------
+
+			   Operation of the Circuit
+
+Please record a video of you demonstrating the operation of the circuit that
+shows the following aspects of the rotary encoder and buzzer operating.
+
+1.  Show the splash screen at the start that shows your name
+
+2.  Show that the count number correctly increments and decrements smoothly as
+you turn the rotary encoder.  It should not skip counts or bounce around to
+different value.
+
+3.  Show that the count value goes both positive and negative.
+
+4.  Demontrate that a tone is played whenever the count is a multiple of eight.
+Tones should increase in pitch each time, and show that when the count reaches
+64 (or -64), it starts over with the tone for the 0 count.
+
+5.  Show that the program is correctly reading the encoder inputs while a tone
+is playing.  Do this by continuing to rotate the encoder while the tone is
+playing and the LCD should update with the correct count once the tone is
+finished.
+
+Paste link to lab demonstration video below:
+
+https://drive.google.com/file/d/1kaCAOEjLa2wxvZW7wQgAfbxdJq4V0tq9/view?usp=sharing
+

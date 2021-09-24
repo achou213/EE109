@@ -1,0 +1,30 @@
+			      EE 109  - Fall 2020
+			      Thermostat Project
+
+
+			   Operation of the Circuit
+
+Please record a video of you demonstrating the operation of the circuit that
+shows the following aspects of the thermostat operating.
+
+1.  Splash screen with your name shown at start
+
+2.  Buttons select and indicate high/low adjustment
+
+3.  Rotary encoder adjusts selected temperature
+
+4.  Low threshold does not go above high threshold and high threshold does
+    not go below low threshold
+
+5.  Threshold values stored in EEPROM and retrieved when Arduino restarted
+
+6.  Temperature sensor responds to temperature changes, displays temperature
+    with 0.1 degree Fahrenheit precision
+
+7.  Heating and cooling LEDs respond correctly as temperature changes
+
+
+Paste link to lab demonstration video below:
+
+https://drive.google.com/file/d/1CQ2p7J3hYEnTDDKsRKKJkhKAa3rdRNTd/view?usp=sharing
+

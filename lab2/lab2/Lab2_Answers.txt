@@ -1,0 +1,140 @@
+			     EE 109  - Fall 2020
+		 Lab 2 - Electronic Circuits and Digital Gates
+
+Edit the document below to fill your answers from the exercises done in lab.
+Be sure to include the proper units, such as "1 kOhm", or "200 mV".
+
+Note: Don't use special characters like Greek "mu" or "Omega" symbols in your
+answers.  These don't display correctly on Vocareum and can make it hard to
+grade the answers.  For example, if you need to specify units of microseconds,
+just type "microseconds" or "usecs".
+
+
+1. (1 point) What voltage did the DMM measure?
+        DMM =  5.04 V
+
+
+2. What are the values of the resistors?  List the values from smallest to
+   largest.
+   (1.5 points) From the color bands:
+	R1 =  240 Ohms 
+	R2 =  560 Ohms 
+	R3 =  1k Ohms 
+         
+   (1.5 points) The measured values:
+        R1 =  242 Ohms
+        R2 =  555 Ohms
+        R3 =  994 Ohms
+
+
+3. (2 points) In the circuit with Vs=5V and resistors R1 and R2 in series what
+   are the calculated voltages across them?
+        V1 =  1.518 V
+        V2 =  3.481 V
+
+
+4. (2 points) In the circuit with Vs=5V and resistors R1 and R2 in series what
+   are the measured voltages across them?
+        V1 =  1.514 V
+        V2 =  3.523 V
+
+
+5. (2 points) What are the voltages (or range of voltages) on the switch output
+   when it is not pressed and when it is pressed?
+        Not pressed =  0.1V
+        Pressed =  2.7 V
+
+
+6. (2 points) With resistor R2 added to the circuit, what are the voltages on the switch
+   output when it is not pressed and when it is pressed?
+        Not pressed =  5.04 V
+        Pressed =  0.2V
+
+
+7. (2 points) Assuming Vs = 4.0V and a Vled of 2.0V, calculate the current flowing through
+   the LED for both resistors.  Use the values that you measured for R1 and R3.
+                Resistance     Current
+        R1:      240 Ohms     0.00826 A
+        R3:      1k Ohms      0.00200 A
+
+
+8: (2 points) Fill in the truth table for the circuit.
+
+	A    B    |   Z
+      ------------+------
+        0    0    |   0
+        0    1    |   0
+        1    0    |   0
+        1    1    |   1
+
+
+9. (1 point) The circuit performs the same function as a AND gate.
+
+
+
+			  ---- Review Questions ----
+
+1. (1.5 points) Suppose you wanted to measure the frequency of a note played by
+a piano and sensed from a microphone connected/viewed on an oscilloscope.
+Answer the following True/False questions with a brief explanation.
+
+     a. True/False: To measure the frequency, the vertical scale of the
+     oscilloscope would be of more use than the horizontal scale.
+
+	False. This is because the vertical scale of the oscilloscope measures the amplitude of the sound wave signal, which is used to find the wavelength and not the frequency. 
+	The horizontal scale on the other hand, records the frequency of the wave signal. 
+
+     b. True/False: Since the note is played for a short time period, we
+     should set the triggering to "Single" rather than "Run".
+
+	True. It is better to use the "single" triggering mode rather than "run" because the oscilloscope stops recording after the first trigger. 
+	Compared to run, where the oscilloscope records the changing data over a long period of time, "single" is more efficient. 
+
+     c. True/False: If the signal ranges between 0V and 2.5V, the trigger
+     level should ideally be set around 1.25V.
+	
+	False. The trigger level is the voltage that causes the signal to initiate in the oscilloscope. 
+	The trigger level doesn't have to be the average of the two voltages; instead, we can set it whatever value we desire. 
+	
+
+2. (1.5 points) Given the digital circuit you built, suppose as you test it the
+output LED is always OFF regardless of the button positions. For each of the
+following possible explanations, write a sentence that explains why that issue
+would cause the LED to always be off.
+
+     a. VDD was not connected to the IC chips.
+
+	Since VDD signifies the voltage supply, and IC chips are the integrated circuits (inverters & NAND gate) in our circuit, 
+	if no power is supplied to these curcuit parts, then no signal will be transmitted, and therefore, no power will be transmitted to the LED. 
+	In other words, the VDD provides the circuit with power and IC chips gives an output to the LED; without an output, the circuit will not work. 
+
+     b. The pull-up resistors for the buttons were not connected appropriately.
+
+	If the pull-up resistors for the buttons were not connected properly, then the power supply that goes throught the button might not flow through appropriately. 
+	The voltage is the input to the LED, so if the resistors are not connected accordingly, then it can change the input to an output, resulting in LED turning off. 
+
+     c. The LED was plugged in backwards.
+
+	If the LED was plugged in backwards, meaning the polarized side is not connected with the the output of the IC chips, then it will not light up, and thus, it won't give an output.
+	The reason is because the LED does not work if it is connected backwards, since the long leg is the anode and short leg is the cathode; electrons always from from anode to cathode. 
+	If it is connected backwards, then there would be no voltage change. 
+
+-------------------------------------------------------------------------------
+
+			   Operation of the Circuit
+
+Please record a video of you demonstrating the operation of the logic circuit
+that shows the output LED under these conditions:
+
+Output when both buttons NOT pressed.
+
+Output when only button A pressed.
+
+Output when only button B pressed.
+
+Output when both buttons pressed.
+
+Paste link to lab demonstration video below:
+
+https://drive.google.com/file/d/1HoAS0RCoZM6rjD80ZcRrG4sLDHorIIOD/view?usp=sharing
+
